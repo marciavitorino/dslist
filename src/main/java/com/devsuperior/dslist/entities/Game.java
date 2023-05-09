@@ -21,22 +21,28 @@ public class Game {
 	@Column(name = "game_year")
 	private Integer year;
 	private String genre;
-	private String platform;
-	private String imgform;
+	private String platforms;
+	private Double score;
+	private String imgUrl;
+	
+	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
+	
+	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 	
 	public Game( ) {
 	}
 
-	public Game(Long id, String title, Integer year, String genre, String platform, String imgform,
-			String shortDescription, String longDescription) {
+	public Game(Long id, String title, Integer year, String genre, String platforms, Double score, 
+			String imgUrl, String shortDescription, String longDescription) {
 		this.id = id;
 		this.title = title;
 		this.year = year;
 		this.genre = genre;
-		this.platform = platform;
-		this.imgform = imgform;
+		this.platforms = platforms;
+		this.score = score;
+		this.imgUrl= imgUrl;
 		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
 	}
@@ -73,20 +79,29 @@ public class Game {
 		this.genre = genre;
 	}
 
-	public String getPlatform() {
-		return platform;
+	public String getPlatforms() {
+		return platforms;
+	}
+	
+
+	public void setPlatforms(String platforms) {
+		this.platforms = platforms;
+	}
+	
+	public Double getScore() {
+		return score;
 	}
 
-	public void setPlatform(String platform) {
-		this.platform = platform;
+	public void setScore(Double score) {
+		this.score = score;
 	}
 
-	public String getImgform() {
-		return imgform;
+	public String getImgUrl() {
+		return imgUrl;
 	}
 
-	public void setImgform(String imgform) {
-		this.imgform = imgform;
+	public void setImgUrl(String imgform) {
+		this.imgUrl = imgform;
 	}
 
 	public String getShortDescription() {
